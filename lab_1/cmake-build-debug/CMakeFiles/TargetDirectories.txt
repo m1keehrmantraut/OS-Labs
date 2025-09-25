@@ -1,0 +1,5 @@
+E:/OS_practice/lab_1/cmake-build-debug/CMakeFiles/Creator.dir
+E:/OS_practice/lab_1/cmake-build-debug/CMakeFiles/Reporter.dir
+E:/OS_practice/lab_1/cmake-build-debug/CMakeFiles/Main.dir
+E:/OS_practice/lab_1/cmake-build-debug/CMakeFiles/edit_cache.dir
+E:/OS_practice/lab_1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
