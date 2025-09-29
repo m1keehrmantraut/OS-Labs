@@ -8,5 +8,5 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 include_directories(${CMAKE_SOURCE_DIR})
 
 add_executable(Creator Creator/creator.cpp)
-add_executable(Reporter Reporter/Reporter.cpp)
-add_executable(Main Main/Main.cpp)
+add_executable(Reporter Reporter/reporter.cpp)
+add_executable(Main Main/main.cpp)

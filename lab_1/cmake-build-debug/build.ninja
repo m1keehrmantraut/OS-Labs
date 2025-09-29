@@ -49,8 +49,8 @@ cmake_ninja_workdir = E$:/OS_practice/lab_1/cmake-build-debug/
 
 build cmake_object_order_depends_target_Creator: phony || .
 
-build CMakeFiles/Creator.dir/Creator/Creator.cpp.obj: CXX_COMPILER__Creator_unscanned_Debug E$:/OS_practice/lab_1/Creator/Creator.cpp || cmake_object_order_depends_target_Creator
-  DEP_FILE = CMakeFiles\Creator.dir\Creator\Creator.cpp.obj.d
+build CMakeFiles/Creator.dir/Creator/creator.cpp.obj: CXX_COMPILER__Creator_unscanned_Debug E$:/OS_practice/lab_1/Creator/creator.cpp || cmake_object_order_depends_target_Creator
+  DEP_FILE = CMakeFiles\Creator.dir\Creator\creator.cpp.obj.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
   INCLUDES = -IE:/OS_practice/lab_1
   OBJECT_DIR = CMakeFiles\Creator.dir
@@ -64,7 +64,7 @@ build CMakeFiles/Creator.dir/Creator/Creator.cpp.obj: CXX_COMPILER__Creator_unsc
 #############################################
 # Link the executable bin\Creator.exe
 
-build bin/Creator.exe: CXX_EXECUTABLE_LINKER__Creator_Debug CMakeFiles/Creator.dir/Creator/Creator.cpp.obj
+build bin/Creator.exe: CXX_EXECUTABLE_LINKER__Creator_Debug CMakeFiles/Creator.dir/Creator/creator.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Creator.dir
