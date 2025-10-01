@@ -1,0 +1,12 @@
+Report for file: test.txt
+
+Employee number: 1
+Name: mike
+Hours worked: 12
+Salary: 144
+--------------------------
+Employee number: 2
+Name: john
+Hours worked: 15
+Salary: 180
+--------------------------

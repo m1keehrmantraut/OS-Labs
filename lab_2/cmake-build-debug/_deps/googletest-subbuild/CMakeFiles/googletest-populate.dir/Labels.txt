@@ -1,0 +1,14 @@
+# Target labels
+ googletest-populate
+# Source files and their labels
+E:/OS_practice/lab_2/cmake-build-debug/_deps/googletest-subbuild/CMakeFiles/googletest-populate
+E:/OS_practice/lab_2/cmake-build-debug/_deps/googletest-subbuild/CMakeFiles/googletest-populate.rule
+E:/OS_practice/lab_2/cmake-build-debug/_deps/googletest-subbuild/CMakeFiles/googletest-populate-complete.rule
+E:/OS_practice/lab_2/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build.rule
+E:/OS_practice/lab_2/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure.rule
+E:/OS_practice/lab_2/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download.rule
+E:/OS_practice/lab_2/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install.rule
+E:/OS_practice/lab_2/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir.rule
+E:/OS_practice/lab_2/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch.rule
+E:/OS_practice/lab_2/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test.rule
+E:/OS_practice/lab_2/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update.rule
