@@ -9,19 +9,19 @@ int min_val, max_val, average_val;
 DWORD WINAPI min_max(LPVOID param) {
     if (arr.empty()) return 0;
 
-    EnterCriticalSection(&cs);
+    //EnterCriticalSection(&cs);
     min_val = max_val = arr[0];
-    LeaveCriticalSection(&cs);
+    //LeaveCriticalSection(&cs);
 
     for (size_t i = 1; i < arr.size(); i++) {
-        EnterCriticalSection(&cs);
+        //EnterCriticalSection(&cs);
         if (arr[i] < min_val) min_val = arr[i];
-        LeaveCriticalSection(&cs);
+        //LeaveCriticalSection(&cs);
         Sleep(7);
 
-        EnterCriticalSection(&cs);
+        //EnterCriticalSection(&cs);
         if (arr[i] > max_val) max_val = arr[i];
-        LeaveCriticalSection(&cs);
+        //LeaveCriticalSection(&cs);
         Sleep(7);
     }
 
@@ -37,16 +37,17 @@ DWORD WINAPI average(LPVOID param) {
         return 0;
     }
 
-    EnterCriticalSection(&cs);
+    //EnterCriticalSection(&cs);
     long long sum = 0;
     for (size_t i = 0; i < arr.size(); i++) {
         sum += arr[i];
-        LeaveCriticalSection(&cs);
+        //LeaveCriticalSection(&cs);
         Sleep(12);
-        EnterCriticalSection(&cs);
+        //EnterCriticalSection(&cs);
     }
     average_val = static_cast<int>(sum / arr.size());
-    LeaveCriticalSection(&cs);
+    //
+    //LeaveCriticalSection(&cs);
 
     std::cout << "Average: " << average_val << std::endl;
     return 0;
