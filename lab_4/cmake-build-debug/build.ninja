@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: lab_4
+# Project: ProcessSync
 # Configurations: Debug
 # =============================================================================
 
@@ -41,43 +41,103 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = E$:/OS_practice/lab_4/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target lab_4
+# Object build statements for EXECUTABLE target Receiver
 
 
 #############################################
-# Order-only phony target for lab_4
+# Order-only phony target for Receiver
 
-build cmake_object_order_depends_target_lab_4: phony || .
+build cmake_object_order_depends_target_Receiver: phony || .
 
-build CMakeFiles/lab_4.dir/Sender/Sender.cpp.obj: CXX_COMPILER__lab_4_unscanned_Debug E$:/OS_practice/lab_4/Sender/Sender.cpp || cmake_object_order_depends_target_lab_4
-  DEP_FILE = CMakeFiles\lab_4.dir\Sender\Sender.cpp.obj.d
-  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\lab_4.dir
-  OBJECT_FILE_DIR = CMakeFiles\lab_4.dir\Sender
-
-build CMakeFiles/lab_4.dir/Receiver/Receiver.cpp.obj: CXX_COMPILER__lab_4_unscanned_Debug E$:/OS_practice/lab_4/Receiver/Receiver.cpp || cmake_object_order_depends_target_lab_4
-  DEP_FILE = CMakeFiles\lab_4.dir\Receiver\Receiver.cpp.obj.d
-  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\lab_4.dir
-  OBJECT_FILE_DIR = CMakeFiles\lab_4.dir\Receiver
+build CMakeFiles/Receiver.dir/Receiver/Receiver.cpp.obj: CXX_COMPILER__Receiver_unscanned_Debug E$:/OS_practice/lab_4/Receiver/Receiver.cpp || cmake_object_order_depends_target_Receiver
+  DEP_FILE = CMakeFiles\Receiver.dir\Receiver\Receiver.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Receiver.dir
+  OBJECT_FILE_DIR = CMakeFiles\Receiver.dir\Receiver
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target lab_4
+# Link build statements for EXECUTABLE target Receiver
 
 
 #############################################
-# Link the executable lab_4.exe
+# Link the executable E:\OS_practice\lab_4\Receiver.exe
 
-build lab_4.exe: CXX_EXECUTABLE_LINKER__lab_4_Debug CMakeFiles/lab_4.dir/Sender/Sender.cpp.obj CMakeFiles/lab_4.dir/Receiver/Receiver.cpp.obj
+build E$:/OS_practice/lab_4/Receiver.exe: CXX_EXECUTABLE_LINKER__Receiver_Debug CMakeFiles/Receiver.dir/Receiver/Receiver.cpp.obj
   FLAGS = -g
-  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\lab_4.dir
+  LINK_LIBRARIES = -lKernel32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\Receiver.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_FILE = lab_4.exe
-  TARGET_IMPLIB = liblab_4.dll.a
-  TARGET_PDB = lab_4.exe.dbg
+  TARGET_FILE = E:\OS_practice\lab_4\Receiver.exe
+  TARGET_IMPLIB = libReceiver.dll.a
+  TARGET_PDB = Receiver.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target Sender
+
+
+#############################################
+# Order-only phony target for Sender
+
+build cmake_object_order_depends_target_Sender: phony || .
+
+build CMakeFiles/Sender.dir/Sender/Sender.cpp.obj: CXX_COMPILER__Sender_unscanned_Debug E$:/OS_practice/lab_4/Sender/Sender.cpp || cmake_object_order_depends_target_Sender
+  DEP_FILE = CMakeFiles\Sender.dir\Sender\Sender.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Sender.dir
+  OBJECT_FILE_DIR = CMakeFiles\Sender.dir\Sender
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target Sender
+
+
+#############################################
+# Link the executable E:\OS_practice\lab_4\Sender.exe
+
+build E$:/OS_practice/lab_4/Sender.exe: CXX_EXECUTABLE_LINKER__Sender_Debug CMakeFiles/Sender.dir/Sender/Sender.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lKernel32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\Sender.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = E:\OS_practice\lab_4\Sender.exe
+  TARGET_IMPLIB = libSender.dll.a
+  TARGET_PDB = Sender.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target test_message
+
+
+#############################################
+# Order-only phony target for test_message
+
+build cmake_object_order_depends_target_test_message: phony || .
+
+build CMakeFiles/test_message.dir/test_message.cpp.obj: CXX_COMPILER__test_message_unscanned_Debug E$:/OS_practice/lab_4/test_message.cpp || cmake_object_order_depends_target_test_message
+  DEP_FILE = CMakeFiles\test_message.dir\test_message.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\test_message.dir
+  OBJECT_FILE_DIR = CMakeFiles\test_message.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target test_message
+
+
+#############################################
+# Link the executable E:\OS_practice\lab_4\test_message.exe
+
+build E$:/OS_practice/lab_4/test_message.exe: CXX_EXECUTABLE_LINKER__test_message_Debug CMakeFiles/test_message.dir/test_message.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\test_message.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = E:\OS_practice\lab_4\test_message.exe
+  TARGET_IMPLIB = libtest_message.dll.a
+  TARGET_PDB = test_message.exe.dbg
 
 
 #############################################
@@ -105,7 +165,17 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build lab_4: phony lab_4.exe
+build Receiver: phony E$:/OS_practice/lab_4/Receiver.exe
+
+build Receiver.exe: phony E$:/OS_practice/lab_4/Receiver.exe
+
+build Sender: phony E$:/OS_practice/lab_4/Sender.exe
+
+build Sender.exe: phony E$:/OS_practice/lab_4/Sender.exe
+
+build test_message: phony E$:/OS_practice/lab_4/test_message.exe
+
+build test_message.exe: phony E$:/OS_practice/lab_4/test_message.exe
 
 # =============================================================================
 # Folder targets.
@@ -115,7 +185,7 @@ build lab_4: phony lab_4.exe
 #############################################
 # Folder: E:/OS_practice/lab_4/cmake-build-debug
 
-build all: phony lab_4.exe
+build all: phony E$:/OS_practice/lab_4/Receiver.exe E$:/OS_practice/lab_4/Sender.exe E$:/OS_practice/lab_4/test_message.exe
 
 # =============================================================================
 # Built-in targets

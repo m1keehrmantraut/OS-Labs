@@ -7,6 +7,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR})
 
 add_executable(Receiver Receiver/Receiver.cpp Receiver/message.h)
 add_executable(Sender Sender/Sender.cpp Receiver/message.h)
+add_executable(test_message test_message.cpp Receiver/message.h)
 
 if(WIN32)
     target_link_libraries(Receiver Kernel32.lib)
