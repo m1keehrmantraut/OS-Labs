@@ -1,3 +1,4 @@
-E:/OS_practice/lab_3/cmake-build-debug/CMakeFiles/lab_3.dir
-E:/OS_practice/lab_3/cmake-build-debug/CMakeFiles/edit_cache.dir
-E:/OS_practice/lab_3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/cygdrive/e/OS_practice/lab_3/cmake-build-debug/CMakeFiles/lab_3.dir
+/cygdrive/e/OS_practice/lab_3/cmake-build-debug/CMakeFiles/test_marker.dir
+/cygdrive/e/OS_practice/lab_3/cmake-build-debug/CMakeFiles/edit_cache.dir
+/cygdrive/e/OS_practice/lab_3/cmake-build-debug/CMakeFiles/rebuild_cache.dir

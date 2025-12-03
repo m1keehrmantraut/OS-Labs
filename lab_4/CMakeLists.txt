@@ -1,15 +1,19 @@
 cmake_minimum_required(VERSION 3.10)
-project(ProcessSync)
+project(lab_4_posix)
 
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR})
+add_executable(Receiver receiver.cpp)
+add_executable(Sender sender.cpp)
+add_executable(test_message test_message.cpp)
 
-add_executable(Receiver Receiver/Receiver.cpp Receiver/message.h)
-add_executable(Sender Sender/Sender.cpp Receiver/message.h)
-add_executable(test_message test_message.cpp Receiver/message.h)
-
-if(WIN32)
-    target_link_libraries(Receiver Kernel32.lib)
-    target_link_libraries(Sender Kernel32.lib)
+if(CYGWIN)
+    target_link_libraries(Receiver cygwin rt pthread)
+    target_link_libraries(Sender cygwin rt pthread)
+    target_compile_options(Receiver PRIVATE -D_GNU_SOURCE)
+    target_compile_options(Sender PRIVATE -D_GNU_SOURCE)
 endif()
+
+enable_testing()
+add_test(NAME MessageTests COMMAND test_message)

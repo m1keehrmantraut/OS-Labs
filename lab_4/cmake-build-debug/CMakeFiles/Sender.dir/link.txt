@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -Wl,--enable-auto-import CMakeFiles/Sender.dir/sender.cpp.o -o Sender.exe -Wl,--out-implib,libSender.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lcygwin -lrt -lpthread

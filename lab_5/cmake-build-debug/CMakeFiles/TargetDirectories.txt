@@ -1,5 +1,0 @@
-E:/OS_practice/lab_5/cmake-build-debug/CMakeFiles/server.dir
-E:/OS_practice/lab_5/cmake-build-debug/CMakeFiles/client.dir
-E:/OS_practice/lab_5/cmake-build-debug/CMakeFiles/test_employee.dir
-E:/OS_practice/lab_5/cmake-build-debug/CMakeFiles/edit_cache.dir
-E:/OS_practice/lab_5/cmake-build-debug/CMakeFiles/rebuild_cache.dir

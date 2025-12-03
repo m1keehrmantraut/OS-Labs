@@ -1,5 +1,0 @@
-# ninja log v6
-2	13463	7858624368590886	CMakeFiles/test_message.dir/test_message.cpp.obj	cce8a5a822aac101
-13479	44840	7858624503369027	E:/OS_practice/lab_4/test_message.exe	3e7be76996870be7
-17	1444	7858625017762231	CMakeFiles/Receiver.dir/Receiver/Receiver.cpp.obj	62fd801478f6fcfd
-1445	1520	7858625032037345	E:/OS_practice/lab_4/Receiver.exe	8c40a34b85b00949

@@ -1,7 +1,11 @@
 #include "../include/marker_app.hpp"
 #include <cstdlib>
+#include <chrono>
+#include <thread>
 
-CRITICAL_SECTION cs;
+std::mutex global_mutex;
+std::condition_variable cv_all_blocked;
+std::condition_variable cv_thread_unblock;
 
 void set_zeros(int* arr, int size, int thread_index) {
     for (int i = 0; i < size; ++i) {
@@ -28,38 +32,53 @@ bool all_threads_terminated(const bool* terminated_threads, int size) {
     return true;
 }
 
-DWORD WINAPI thread_func(LPVOID params) {
-    thread_info info = *static_cast<thread_info*>(params);
+void thread_func(ThreadInfo* info) {
     bool end_thread = false;
     int number_of_marked_elements = 0;
 
-    std::srand(info.thread_index);
+    std::srand(info->thread_index);
 
-    WaitForSingleObject(info.start_work, INFINITE);
+    while (!info->should_start) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(1));
+    }
 
     while (!end_thread) {
-        int ind = std::rand() % info.array_size;
-        EnterCriticalSection(&cs);
-        if (info.arr[ind] == 0) {
-            Sleep(5);
-            info.arr[ind] = info.thread_index;
-            LeaveCriticalSection(&cs);
-            ++number_of_marked_elements;
-            Sleep(5);
-        } else {
-            std::cout << "\nThread " << info.thread_index
-                      << ", number of marked elements: " << number_of_marked_elements
-                      << ", can't mark element with index " << ind;
-            LeaveCriticalSection(&cs);
-            SetEvent(info.stop_work);
-            DWORD res = WaitForMultipleObjects(2, info.terminate_or_continue, FALSE, INFINITE);
-            int k = static_cast<int>(res - WAIT_OBJECT_0);
-            if (k == 0) {
-                end_thread = true;
+        int ind = std::rand() % info->array_size;
+
+        {
+            std::unique_lock<std::mutex> lock(global_mutex);
+            if (info->arr[ind] == 0) {
+                lock.unlock();
+                std::this_thread::sleep_for(std::chrono::milliseconds(5));
+
+                lock.lock();
+                info->arr[ind] = info->thread_index;
+                lock.unlock();
+
+                ++number_of_marked_elements;
+                std::this_thread::sleep_for(std::chrono::milliseconds(5));
+            } else {
+                std::cout << "\nThread " << info->thread_index
+                          << ", number of marked elements: " << number_of_marked_elements
+                          << ", can't mark element with index " << ind << std::endl;
+                lock.unlock();
+
+                info->is_blocked = true;
+                cv_all_blocked.notify_one();
+
+                while (!info->should_terminate && !info->can_continue) {
+                    std::this_thread::sleep_for(std::chrono::milliseconds(1));
+                }
+
+                if (info->should_terminate) {
+                    end_thread = true;
+                } else {
+                    info->can_continue = false;
+                    info->is_blocked = false;
+                }
             }
         }
     }
 
-    set_zeros(info.arr, info.array_size, info.thread_index);
-    return 0;
+    set_zeros(info->arr, info->array_size, info->thread_index);
 }
