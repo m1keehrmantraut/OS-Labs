@@ -2,10 +2,9 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <cstring>
 
 #pragma warning(disable: 4996)
-
-using namespace std;
 
 struct employee {
     int num;
@@ -13,12 +12,12 @@ struct employee {
     double hours;
 
     employee() : num(0), hours(0.0) {
-        memset(name, 0, 10);
+        std::memset(name, 0, sizeof(name));
     }
 
-    employee(int n, const string& nm, double h) : num(n), hours(h) {
-        memset(name, 0, 10);
-        strncpy(name, nm.c_str(), 9);
+    employee(int n, const std::string& nm, double h) : num(n), hours(h) {
+        std::memset(name, 0, sizeof(name));
+        std::strncpy(name, nm.c_str(), sizeof(name) - 1);
     }
 
     const char* get_name() const {
@@ -33,22 +32,22 @@ struct employee {
         return hours;
     }
 
-    void set_name(const string& nm) {
-        memset(name, 0, 10);
-        strncpy(name, nm.c_str(), 9);
+    void set_name(const std::string& nm) {
+        std::memset(name, 0, sizeof(name));
+        std::strncpy(name, nm.c_str(), sizeof(name) - 1);
     }
 
     void set_hours(double h) {
         hours = h;
     }
-
-    friend ostream& operator<<(ostream& out, const employee& e) {
-        out.write((char*)&e, sizeof(e));
-        return out;
-    }
-
-    friend istream& operator>>(istream& in, employee& e) {
-        in.read((char*)&e, sizeof(e));
-        return in;
-    }
 };
+
+inline std::ostream& operator<<(std::ostream& out, const employee& e) {
+    out.write(reinterpret_cast<const char*>(&e), sizeof(e));
+    return out;
+}
+
+inline std::istream& operator>>(std::istream& in, employee& e) {
+    in.read(reinterpret_cast<char*>(&e), sizeof(e));
+    return in;
+}

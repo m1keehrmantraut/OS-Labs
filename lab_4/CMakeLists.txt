@@ -17,3 +17,8 @@ endif()
 
 enable_testing()
 add_test(NAME MessageTests COMMAND test_message)
+
+
+#cd /cygdrive/e/OS_practice/lab_4/cmake-build-debug
+#./Receiver.exe
+#./Sender.exe 0

@@ -1,7 +1,9 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
-#include "../doctest.h"
+#include "doctest.h"
 #include "../include/employee.h"
 #include <sstream>
+#include <cstring>
+#include <string>
 
 using namespace std;
 
@@ -40,7 +42,7 @@ TEST_CASE("employee serialization") {
     employee e(5, "Bob", 38.0);
     stringstream ss;
     ss << e;
-    CHECK(ss.str().length() == sizeof(employee));
+    CHECK(ss.str().size() == sizeof(employee));
 }
 
 TEST_CASE("employee deserialization") {
@@ -65,20 +67,19 @@ TEST_CASE("employee roundtrip multiple") {
     ss << e1 << e2;
     ss.seekg(0);
 
-    employee copy1, copy2;
-    ss >> copy1 >> copy2;
+    employee c1, c2;
+    ss >> c1 >> c2;
 
-    CHECK(copy1.get_num() == 1);
-    CHECK(string(copy1.get_name()) == "Alice");
-    CHECK(copy2.get_num() == 2);
-    CHECK(string(copy2.get_name()) == "Bob");
+    CHECK(c1.get_num() == 1);
+    CHECK(string(c1.get_name()) == "Alice");
+    CHECK(c2.get_num() == 2);
+    CHECK(string(c2.get_name()) == "Bob");
 }
 
 TEST_CASE("employee struct size") {
     CHECK(sizeof(employee) >= sizeof(int) + sizeof(char[10]) + sizeof(double));
 }
 
-
 TEST_CASE("employee name buffer exactly 10 bytes") {
-    CHECK(sizeof(employee::name) == 10);
+    CHECK(sizeof(((employee*)0)->name) == 10);
 }

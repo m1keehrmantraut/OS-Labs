@@ -1,0 +1,5 @@
+/cygdrive/e/OS_practice/lab_5/cmake-build-debug/CMakeFiles/server.dir
+/cygdrive/e/OS_practice/lab_5/cmake-build-debug/CMakeFiles/client.dir
+/cygdrive/e/OS_practice/lab_5/cmake-build-debug/CMakeFiles/test_employee.dir
+/cygdrive/e/OS_practice/lab_5/cmake-build-debug/CMakeFiles/edit_cache.dir
+/cygdrive/e/OS_practice/lab_5/cmake-build-debug/CMakeFiles/rebuild_cache.dir

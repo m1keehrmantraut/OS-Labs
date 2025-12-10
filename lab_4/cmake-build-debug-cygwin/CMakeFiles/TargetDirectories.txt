@@ -1,0 +1,6 @@
+/cygdrive/e/OS_practice/lab_4/cmake-build-debug-cygwin/CMakeFiles/Receiver.dir
+/cygdrive/e/OS_practice/lab_4/cmake-build-debug-cygwin/CMakeFiles/Sender.dir
+/cygdrive/e/OS_practice/lab_4/cmake-build-debug-cygwin/CMakeFiles/test_message.dir
+/cygdrive/e/OS_practice/lab_4/cmake-build-debug-cygwin/CMakeFiles/test.dir
+/cygdrive/e/OS_practice/lab_4/cmake-build-debug-cygwin/CMakeFiles/edit_cache.dir
+/cygdrive/e/OS_practice/lab_4/cmake-build-debug-cygwin/CMakeFiles/rebuild_cache.dir
